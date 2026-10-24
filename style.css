@@ -1,0 +1,1469 @@
+/* Core colors, spacing and type */
+:root {
+  --cream: #f8f6f1;
+  --warm-white: #fffefa;
+  --sand: #e9e2d6;
+  --taupe: #887762;
+  --brown: #594b3b;
+  --charcoal: #292a27;
+  --muted: #77756f;
+  --serif: "Playfair Display", Georgia, serif;
+  --sans: "DM Sans", Arial, sans-serif;
+  --container: 1160px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+
+body {
+  margin: 0;
+  color: var(--charcoal);
+  background: var(--warm-white);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+.container {
+  width: min(var(--container), calc(100% - 64px));
+  margin-inline: auto;
+}
+
+.section-space {
+  padding-block: 112px;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 500;
+}
+
+h1,
+h2 {
+  font-family: var(--serif);
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+}
+
+h1 em,
+h2 em {
+  color: var(--taupe);
+  font-weight: 500;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  color: var(--taupe);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.eyebrow-dot,
+.hero-eyebrow > span {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 7px;
+  border-radius: 50%;
+  background: #a89170;
+}
+
+/* Sticky navigation and mobile menu */
+.site-header {
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  border-bottom: 1px solid rgba(74, 65, 54, 0.08);
+  background: rgba(255, 254, 250, 0.96);
+  backdrop-filter: blur(12px);
+}
+
+.navigation {
+  display: flex;
+  min-height: 78px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  text-decoration: none;
+}
+
+.brand-mark {
+  display: grid;
+  width: 35px;
+  height: 35px;
+  place-items: center;
+  border: 1px solid #a9957b;
+  border-radius: 50%;
+  color: var(--brown);
+  font-family: var(--serif);
+  font-size: 20px;
+  font-style: italic;
+}
+
+.brand-name {
+  color: var(--brown);
+  font-family: var(--serif);
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.brand-name span {
+  display: block;
+  margin-top: 3px;
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 9px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: clamp(19px, 3vw, 39px);
+}
+
+.nav-links a {
+  color: #58564f;
+  font-size: 12px;
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  color: var(--taupe);
+}
+
+.nav-links .nav-contact {
+  padding: 10px 17px;
+  border: 1px solid #d9d0c2;
+  border-radius: 2px;
+  color: var(--brown);
+}
+
+.nav-contact span {
+  margin-left: 7px;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+/* Large image hero */
+.hero {
+  position: relative;
+  display: flex;
+  min-height: calc(100svh - 175px);
+  align-items: center;
+  overflow: hidden;
+  background: #4c4940;
+  color: #fffefa;
+}
+
+.hero-image,
+.hero-shade {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-image {
+  object-fit: cover;
+  object-position: center 53%;
+}
+
+.hero-image.image-unavailable,
+.about-photo.image-unavailable {
+  visibility: hidden;
+}
+
+.hero-shade {
+  background: linear-gradient(90deg, rgba(30, 30, 27, 0.72) 0%, rgba(37, 36, 32, 0.53) 40%, rgba(34, 33, 30, 0.06) 100%),
+    linear-gradient(0deg, rgba(34, 33, 30, 0.2), transparent 32%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding-block: 100px;
+}
+
+.hero-eyebrow {
+  margin-bottom: 24px;
+  color: rgba(255, 254, 250, 0.84);
+}
+
+.hero-eyebrow > span {
+  background: #cfb994;
+}
+
+.hero h1 {
+  max-width: 720px;
+  margin-bottom: 22px;
+  font-size: clamp(54px, 7.2vw, 88px);
+  line-height: 1.05;
+}
+
+.hero h1 em {
+  color: #e4d4bb;
+}
+
+.hero-description {
+  max-width: 440px;
+  margin-bottom: 32px;
+  color: rgba(255, 254, 250, 0.86);
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.button {
+  display: inline-flex;
+  min-height: 49px;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 0 20px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button span {
+  font-size: 16px;
+}
+
+.button-light {
+  background: var(--warm-white);
+  color: var(--brown);
+}
+
+.button-light:hover {
+  background: #eae2d5;
+}
+
+.button-dark {
+  background: var(--brown);
+  color: white;
+}
+
+.button-dark:hover {
+  background: #40362b;
+}
+
+.hero-note {
+  position: absolute;
+  right: max(32px, calc((100% - var(--container)) / 2));
+  bottom: 42px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  color: rgba(255, 254, 250, 0.85);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+}
+
+.hero-note-line {
+  width: 32px;
+  height: 1px;
+  background: #d0bc9d;
+}
+
+.scroll-cue {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  display: grid;
+  width: 38px;
+  height: 48px;
+  place-items: center;
+  border: 1px solid rgba(255, 254, 250, 0.35);
+  border-bottom: 0;
+  border-radius: 50% 50% 0 0;
+}
+
+.scroll-cue span {
+  width: 1px;
+  height: 16px;
+  background: rgba(255, 254, 250, 0.78);
+}
+
+/* About section */
+.about {
+  background: var(--warm-white);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 0.92fr 1fr;
+  align-items: center;
+  gap: clamp(58px, 9vw, 120px);
+}
+
+.about-photo-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 470px;
+  min-height: 500px;
+  background: #dfd8cb;
+}
+
+.about-photo {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.photo-caption {
+  position: absolute;
+  right: -25px;
+  bottom: 30px;
+  display: flex;
+  min-width: 195px;
+  align-items: center;
+  gap: 13px;
+  padding: 17px 20px;
+  background: var(--warm-white);
+  color: var(--brown);
+  font-family: var(--serif);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.caption-mark {
+  color: #9f896a;
+  font-size: 22px;
+}
+
+.about-copy h2,
+.section-heading h2,
+.pricing-intro h2,
+.method-heading h2,
+.contact h2 {
+  margin-bottom: 22px;
+  font-size: clamp(38px, 4.4vw, 54px);
+}
+
+.about-copy .lead {
+  margin-bottom: 15px;
+  color: var(--brown);
+  font-family: var(--serif);
+  font-size: 19px;
+  line-height: 1.55;
+}
+
+.about-copy > p:not(.eyebrow, .lead) {
+  max-width: 490px;
+  margin-bottom: 13px;
+  color: #6e6b64;
+  font-size: 13px;
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  color: var(--brown);
+  font-size: 11px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.text-link span {
+  color: #9d8768;
+  font-size: 16px;
+  transition: transform 180ms ease;
+}
+
+.text-link:hover span {
+  transform: translateX(4px);
+}
+
+.about-copy > .text-link {
+  margin-top: 9px;
+}
+
+.signature {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-top: 36px;
+  color: var(--brown);
+  font-family: var(--serif);
+  font-size: 27px;
+  font-style: italic;
+}
+
+.signature span {
+  color: #8a867e;
+  font-family: var(--sans);
+  font-size: 9px;
+  font-style: normal;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Training cards */
+.training {
+  background: var(--cream);
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+
+.section-heading h2 {
+  margin-bottom: 0;
+}
+
+.section-heading > p {
+  max-width: 330px;
+  margin-bottom: 7px;
+  color: #77736b;
+  font-size: 13px;
+}
+
+.training-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 17px;
+}
+
+.training-card {
+  display: flex;
+  min-height: 285px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 25px 27px 24px;
+  border: 1px solid #ebe5db;
+  background: var(--warm-white);
+  transition: border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+.training-card:hover {
+  transform: translateY(-4px);
+  border-color: #cfc2ae;
+  box-shadow: 0 14px 35px rgba(62, 53, 41, 0.06);
+}
+
+.card-topline {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 27px;
+  color: #9a8a73;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+}
+
+.card-symbol {
+  color: #a28d6e;
+  font-size: 21px;
+}
+
+.training-card h3 {
+  margin-bottom: 10px;
+  color: var(--brown);
+  font-family: var(--serif);
+  font-size: 24px;
+}
+
+.training-card p {
+  margin-bottom: 22px;
+  color: #77736b;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.training-card .text-link {
+  margin-top: auto;
+}
+
+/* Pricing details */
+.pricing {
+  background: var(--warm-white);
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  align-items: center;
+  gap: clamp(60px, 10vw, 140px);
+}
+
+.pricing-intro > p:not(.eyebrow) {
+  max-width: 420px;
+  margin-bottom: 25px;
+  color: #77736b;
+  font-size: 13px;
+}
+
+.price-panel {
+  padding: 32px 36px;
+  border: 1px solid #e5ded2;
+  background: var(--cream);
+}
+
+.price-panel-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 19px;
+  color: #8b7a63;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.price-leaf {
+  font-size: 19px;
+}
+
+.price-panel h3 {
+  margin-bottom: 10px;
+  color: var(--brown);
+  font-family: var(--serif);
+  font-size: 27px;
+}
+
+.price-panel > p:not(.price-note) {
+  margin-bottom: 21px;
+  color: #77736b;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.price-divider {
+  height: 1px;
+  background: #e3dbce;
+}
+
+.price-points {
+  display: grid;
+  gap: 9px;
+  margin: 18px 0;
+  padding: 0;
+  color: #5f5a51;
+  font-size: 11px;
+  list-style: none;
+}
+
+.price-points li {
+  display: flex;
+  gap: 10px;
+}
+
+.price-points li span {
+  color: #9a8466;
+}
+
+.price-note {
+  margin-bottom: 0;
+  color: #8b7a63;
+  font-size: 10px;
+  font-style: italic;
+}
+
+/* Three-step training approach */
+.method {
+  background: var(--cream);
+}
+
+.method-heading {
+  max-width: 540px;
+  margin: 0 auto 53px;
+  text-align: center;
+}
+
+.method-heading .eyebrow {
+  justify-content: center;
+}
+
+.method-heading > p:last-child {
+  max-width: 420px;
+  margin: 0 auto;
+  color: #77736b;
+  font-size: 13px;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+}
+
+.step {
+  display: flex;
+  gap: 17px;
+  padding-top: 22px;
+  border-top: 1px solid #d9d0c2;
+}
+
+.step-number {
+  flex: 0 0 auto;
+  color: #9a8466;
+  font-family: var(--serif);
+  font-size: 17px;
+}
+
+.step h3 {
+  margin-bottom: 9px;
+  color: var(--brown);
+  font-family: var(--serif);
+  font-size: 20px;
+}
+
+.step p {
+  margin-bottom: 0;
+  color: #77736b;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* Contact call to action */
+.contact {
+  position: relative;
+  overflow: hidden;
+  background: #665744;
+  color: var(--warm-white);
+  text-align: center;
+}
+
+.contact-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.contact .eyebrow {
+  justify-content: center;
+  color: #e1d4bf;
+}
+
+.contact .eyebrow-dot {
+  background: #d5bd97;
+}
+
+.contact h2 {
+  margin-bottom: 17px;
+  color: white;
+  font-size: clamp(40px, 5.5vw, 66px);
+}
+
+.contact h2 em {
+  color: #e4d4bb;
+}
+
+.contact-inner > p:not(.eyebrow) {
+  max-width: 450px;
+  margin: 0 auto 28px;
+  color: rgba(255, 254, 250, 0.78);
+  font-size: 13px;
+}
+
+.contact-note {
+  display: block;
+  margin-top: 15px;
+  color: rgba(255, 254, 250, 0.7);
+  font-size: 10px;
+}
+
+.contact-decoration {
+  position: absolute;
+  top: -115px;
+  right: 7%;
+  color: rgba(255, 254, 250, 0.06);
+  font-size: 370px;
+  line-height: 1;
+}
+
+/* Footer and policy details */
+.site-footer {
+  background: #f2efe9;
+}
+
+.footer-main {
+  display: flex;
+  min-height: 112px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.footer-main > p {
+  margin: 0;
+  color: #77736b;
+  font-size: 11px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 21px;
+}
+
+.footer-links a,
+.footer-bottom a {
+  color: #68645c;
+  font-size: 10px;
+  text-decoration: none;
+}
+
+.footer-links a:hover,
+.footer-bottom a:hover {
+  color: var(--brown);
+  text-decoration: underline;
+}
+
+.footer-legal {
+  display: grid;
+  gap: 9px;
+  padding-block: 0 24px;
+}
+
+.footer-legal details {
+  color: #6e6b64;
+  font-size: 10px;
+}
+
+.footer-legal summary {
+  width: fit-content;
+  cursor: pointer;
+  color: #68645c;
+}
+
+.footer-legal details p {
+  max-width: 790px;
+  margin: 8px 0 0;
+  line-height: 1.7;
+}
+
+.footer-bottom {
+  display: flex;
+  min-height: 51px;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #e1dbd1;
+  color: #88847c;
+  font-size: 10px;
+}
+
+/* Tablet and mobile adjustments */
+@media (max-width: 800px) {
+  .section-space {
+    padding-block: 82px;
+  }
+
+  .nav-links {
+    gap: 17px;
+  }
+
+  .nav-links a {
+    font-size: 11px;
+  }
+
+  .about-grid {
+    gap: 45px;
+  }
+
+  .about-photo-wrap,
+  .about-photo {
+    min-height: 420px;
+    height: 420px;
+  }
+
+  .training-card {
+    padding-inline: 21px;
+  }
+
+  .pricing-grid {
+    gap: 50px;
+  }
+}
+
+@media (max-width: 640px) {
+  html {
+    scroll-padding-top: 70px;
+  }
+
+  .container {
+    width: min(var(--container), calc(100% - 40px));
+  }
+
+  .section-space {
+    padding-block: 69px;
+  }
+
+  .navigation {
+    min-height: 68px;
+  }
+
+  .brand-mark {
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+  }
+
+  .brand-name {
+    font-size: 15px;
+  }
+
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 0 9px 9px;
+    border: 0;
+    background: transparent;
+    color: var(--brown);
+    font: 600 11px var(--sans);
+    cursor: pointer;
+  }
+
+  .menu-icon {
+    display: grid;
+    gap: 5px;
+  }
+
+  .menu-icon span {
+    width: 20px;
+    height: 1px;
+    background: var(--brown);
+    transition: transform 180ms ease;
+  }
+
+  .menu-toggle[aria-expanded="true"] .menu-icon span:first-child {
+    transform: translateY(3px) rotate(45deg);
+  }
+
+  .menu-toggle[aria-expanded="true"] .menu-icon span:last-child {
+    transform: translateY(-3px) rotate(-45deg);
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    display: none;
+    align-items: stretch;
+    gap: 0;
+    padding: 8px 20px 18px;
+    border-top: 1px solid #eee9e1;
+    background: var(--warm-white);
+    box-shadow: 0 14px 20px rgba(48, 42, 34, 0.08);
+  }
+
+  .nav-links.is-open {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-links a {
+    padding: 12px 0;
+    border-bottom: 1px solid #eee9e1;
+    font-size: 13px;
+  }
+
+  .nav-links .nav-contact {
+    width: fit-content;
+    margin-top: 12px;
+    padding: 9px 14px;
+    border: 1px solid #d9d0c2;
+  }
+
+  .hero {
+    min-height: 630px;
+    min-height: min(700px, calc(100svh - 68px));
+    align-items: center;
+  }
+
+  .hero-image {
+    object-position: 62% center;
+  }
+
+  .hero-shade {
+    background: linear-gradient(90deg, rgba(30, 30, 27, 0.68), rgba(37, 36, 32, 0.22)),
+      linear-gradient(0deg, rgba(34, 33, 30, 0.24), transparent 55%);
+  }
+
+  .hero-content {
+    padding-block: 76px;
+  }
+
+  .hero h1 {
+    font-size: clamp(49px, 13vw, 70px);
+  }
+
+  .hero-description {
+    max-width: 350px;
+    font-size: 13px;
+  }
+
+  .hero-note {
+    right: 20px;
+    bottom: 25px;
+    font-size: 9px;
+  }
+
+  .scroll-cue {
+    display: none;
+  }
+
+  .about-grid,
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-grid {
+    gap: 43px;
+  }
+
+  .about-photo-wrap {
+    width: calc(100% - 12px);
+    max-width: none;
+    min-height: 390px;
+  }
+
+  .about-photo {
+    height: 390px;
+  }
+
+  .photo-caption {
+    right: -12px;
+    bottom: 18px;
+    min-width: 170px;
+    padding: 13px 15px;
+    font-size: 12px;
+  }
+
+  .about-copy h2,
+  .section-heading h2,
+  .pricing-intro h2,
+  .method-heading h2 {
+    font-size: clamp(39px, 10vw, 49px);
+  }
+
+  .section-heading {
+    display: block;
+    margin-bottom: 31px;
+  }
+
+  .section-heading > p {
+    max-width: 400px;
+    margin-top: 16px;
+  }
+
+  .training-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .training-card {
+    min-height: 255px;
+    padding: 23px;
+  }
+
+  .pricing-grid {
+    gap: 35px;
+  }
+
+  .price-panel {
+    padding: 26px 23px;
+  }
+
+  .method-heading {
+    margin-bottom: 38px;
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .step {
+    padding-top: 18px;
+  }
+
+  .contact h2 {
+    font-size: clamp(39px, 10vw, 54px);
+  }
+
+  .contact-decoration {
+    top: -32px;
+    right: -45px;
+    font-size: 210px;
+  }
+
+  .footer-main {
+    min-height: 0;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 17px 26px;
+    padding-block: 27px;
+  }
+
+  .footer-main > p {
+    width: 100%;
+    order: 1;
+  }
+
+  .footer-links {
+    gap: 14px;
+    margin-left: auto;
+  }
+
+  .footer-bottom {
+    min-height: 58px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Echt logo */
+/*
+.brand img {
+    height: 55px;
+    width: auto;
+    display: block;
+}
+*/
+
+/* =========================
+   LOGO IN HEADER
+========================= */
+
+/* Zet het beeldmerk en de tekst netjes naast elkaar */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+
+/* =========================
+   BEELDMERK: PAARD + INEKE
+========================= */
+
+/* Groot formaat wanneer je bovenaan de pagina staat */
+.brand .brand-symbol {
+    width: 175px;
+    height: 175px;
+    object-fit: contain;
+    display: block;
+
+    transition:
+        width 0.35s ease,
+        height 0.35s ease;
+}
+
+
+/* =========================
+   TEKSTLOGO
+========================= */
+
+/* Tekstlogo naast het beeldmerk */
+.brand .brand-wordmark {
+    width: 425px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+
+    transition:
+        width 0.35s ease;
+}
+
+
+/* =========================
+   HEADER OVERGANG
+========================= */
+
+/* Zorgt ervoor dat veranderingen in de header soepel verlopen */
+header {
+    transition:
+        padding 0.35s ease,
+        box-shadow 0.35s ease,
+        background-color 0.35s ease;
+}
+
+
+/* =========================
+   LOGO KLEINER BIJ SCROLLEN
+========================= */
+
+/* Wanneer je naar beneden scrollt wordt het beeldmerk kleiner */
+header.scrolled .brand-symbol {
+    width: 58px;
+    height: 58px;
+}
+
+
+/* Wanneer je naar beneden scrollt wordt ook het tekstlogo kleiner */
+header.scrolled .brand-wordmark {
+    width: 165px;
+}
+
+
+/* =========================
+   HEADER BOVENAAN HOUDEN
+========================= */
+
+/* Zorgt ervoor dat de navigatie bovenaan blijft staan tijdens scrollen */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* =========================
+   MOBIELE HEADER / LOGO
+========================= */
+
+@media (max-width: 768px) {
+
+    /* Zorgt dat de header nooit breder wordt dan het telefoonscherm */
+    header {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Beeldmerk en tekst blijven naast elkaar, maar compacter */
+    .brand {
+        gap: 8px;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    /* Paard + Ineke kleiner op telefoon */
+    .brand .brand-symbol {
+        width: 62px;
+        height: 62px;
+        flex-shrink: 0;
+    }
+
+    /* Tekstlogo passend maken op telefoon */
+    .brand .brand-wordmark {
+        width: 135px;
+        max-width: 40vw;
+        height: auto;
+    }
+
+    /* Nog iets compacter nadat je scrollt */
+    header.scrolled .brand-symbol {
+        width: 48px;
+        height: 48px;
+    }
+
+    header.scrolled .brand-wordmark {
+        width: 115px;
+        max-width: 36vw;
+    }
+}
+
+/* Voorkomt horizontaal uitschuiven van de website */
+html,
+body {
+    max-width: 100%;
+    overflow-x: clip;
+}
+
+/* HEADER 2X ZO HOOG BIJ START */
+@media (min-width: 769px) {
+
+    .site-header .navigation {
+        padding-top: 88px;
+        padding-bottom: 88px;
+        transition: padding 0.35s ease;
+    }
+
+    /* Header wordt weer klein bij scrollen */
+    header.scrolled .navigation {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
+
+/* Tekst op eerste pagina omhoog */
+@media (min-width: 769px) {
+
+    .hero {
+        align-items: flex-start;
+    }
+
+    .hero-content {
+        padding-top: 30px;
+        padding-bottom: 100px;
+    }
+}
+
+/* Verwijder persoonlijke paardentraining */
+.hero-eyebrow {
+    display: none;
+}
+
+/* =========================
+   HEADER ZONDER GLITCHEN
+========================= */
+
+/* Header staat los van de pagina */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+
+/* Ruimte voor de grote header behouden */
+body {
+    padding-top: 78px;
+}
+
+/* Ruimte aanpassen voor tablet */
+@media (min-width: 641px) and (max-width: 768px) {
+    body {
+        padding-top: 79px;
+    }
+}
+
+/* Ruimte aanpassen voor mobiel */
+@media (max-width: 640px) {
+    body {
+        padding-top: 69px;
+    }
+}
+
+/* Homepage achter de grote header plaatsen */
+@media (min-width: 769px) {
+    .hero {
+        padding-top: 274px;
+    }
+}
+
+/* =========================
+   HEADER BEWEEGT MEE MET SCROLLEN
+========================= */
+
+@media (min-width: 769px) {
+
+    /* Vaste ruimte voor de grote header */
+    body {
+        padding-top: 352px;
+    }
+
+    /* Witte header wordt dynamisch kleiner */
+    .site-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: var(--header-height, 352px);
+        min-height: 0;
+    }
+
+    /* Navigatie beweegt mee */
+    .site-header .navigation {
+        height: 100%;
+        min-height: 0;
+        padding: 0;
+        transition: none;
+    }
+
+    /* Paard + Ineke */
+    .site-header .brand .brand-symbol {
+        width: var(--symbol-size, 175px);
+        height: var(--symbol-size, 175px);
+        transition: none;
+    }
+
+    /* Tekstlogo */
+    .site-header .brand .brand-wordmark {
+        width: var(--wordmark-width, 370px);
+        transition: none;
+    }
+
+    /* Geen extra ruimte boven de homepage */
+    .hero {
+        padding-top: 0;
+    }
+}
+
+/* =========================
+   EERSTE PAGINA PAST IN HET SCHERM
+========================= */
+
+@media (min-width: 769px) {
+
+    .hero {
+        height: calc(100svh - 352px);
+        min-height: 0;
+        padding-top: 0;
+        align-items: flex-start;
+    }
+
+    .hero-content {
+        padding-top: 30px;
+        padding-bottom: 20px;
+    }
+
+}
+
+/* =========================
+   HEADER BREEDTE EN UITLIJNING
+========================= */
+
+@media (min-width: 769px) {
+
+    /* Meer ruimte gebruiken over de schermbreedte */
+    .site-header .navigation {
+        width: calc(100% - 48px);
+        max-width: none;
+        margin-inline: auto;
+    }
+
+    /* Tekstlogo groter, maar passend op het scherm */
+    .site-header .brand .brand-wordmark {
+        width: min(var(--wordmark-width, 480px), 38vw);
+    }
+
+}
+
+/* =========================
+   GROTERE MENUTEKST
+========================= */
+
+@media (min-width: 769px) {
+
+    .site-header .nav-links a {
+        font-size: clamp(12px, 1.15vw, 16px);
+        font-weight: 500;
+        transition: font-size 0.35s ease;
+    }
+
+}
+
+
+/* =========================
+   GROTERE BESCHRIJVENDE TEKST
+========================= */
+
+.about-copy > p:not(.eyebrow, .lead),
+.section-heading > p,
+.training-card p,
+.pricing-intro > p:not(.eyebrow),
+.price-panel > p:not(.price-note),
+.method-heading > p:last-child,
+.step p,
+.contact-inner > p:not(.eyebrow) {
+    font-size: 15px;
+    line-height: 1.85;
+}
+
+/* Op telefoon iets compacter */
+@media (max-width: 640px) {
+    .about-copy > p:not(.eyebrow, .lead),
+    .section-heading > p,
+    .training-card p,
+    .pricing-intro > p:not(.eyebrow),
+    .price-panel > p:not(.price-note),
+    .method-heading > p:last-child,
+    .step p,
+    .contact-inner > p:not(.eyebrow) {
+        font-size: 14px;
+    }
+}
+
+.signature.signature-highlights span {
+    color: var(--brown);
+    font-family: var(--serif);
+    font-size: 27px;
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: normal;
+    line-height: 1.4;
+    text-transform: none;
+}
+
+@media (max-width: 640px) {
+    .signature.signature-highlights span {
+        font-size: 22px;
+    }
+}
+
+/* VIJF TRAININGSVAKJES NETJES VERDELEN */
+
+@media (min-width: 801px) {
+
+    .training-grid {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+
+    .training-card {
+        grid-column: span 2;
+    }
+
+    /* Onderste twee vakjes centreren */
+    .training-card:nth-child(4) {
+        grid-column: 2 / span 2;
+    }
+
+    .training-card:nth-child(5) {
+        grid-column: 4 / span 2;
+    }
+}
