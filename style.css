@@ -1403,7 +1403,7 @@ body {
     height: calc(100svh - 78px);
     align-items: center;
     padding-block: clamp(24px, 5vh, 60px);
-    background: var(--warm-white);
+    background: var(--cream);
 }
 
 .training-detail-photo-wrap {
