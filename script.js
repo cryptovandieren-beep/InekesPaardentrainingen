@@ -52,6 +52,18 @@ const header = document.querySelector(".site-header");
 if (header) {
     function updateHeader() {
 
+if (document.body.classList.contains("training-detail-page")) {
+    header.classList.add("scrolled");
+
+    if (window.innerWidth > 768) {
+        header.style.setProperty("--header-height", "78px");
+        header.style.setProperty("--symbol-size", "58px");
+        header.style.setProperty("--wordmark-width", "165px");
+    }
+
+    return;
+}
+
         // Mobiel behoudt het bestaande gedrag
         if (window.innerWidth <= 768) {
             header.classList.toggle("scrolled", window.scrollY > 1);
@@ -60,17 +72,17 @@ if (header) {
 
         header.classList.remove("scrolled");
 
-        // Maximaal 274 pixels verkleinen
-        const scrollDistance = Math.min(
-            Math.max(window.scrollY, 0), 274
+        // De header krimpt 1px per gescrollde pixel tot 78px hoog.
+        const headerScrollDistance = Math.min(
+            Math.max(window.scrollY, 0), 186
         );
 
-        const progress = scrollDistance / 274;
+        const progress = headerScrollDistance / 186;
 
         // Hele witte header verkleinen
         header.style.setProperty(
             "--header-height",
-            `${352 - scrollDistance}px`
+            `${264 - headerScrollDistance}px`
         );
 
         // Paard + Ineke verkleinen
@@ -91,4 +103,3 @@ if (header) {
 
     updateHeader();
 }
-

@@ -1304,7 +1304,7 @@ body {
 
     /* Vaste ruimte voor de grote header */
     body {
-        padding-top: 352px;
+        padding-top: 264px;
     }
 
     /* Witte header wordt dynamisch kleiner */
@@ -1313,7 +1313,7 @@ body {
         top: 0;
         left: 0;
         right: 0;
-        height: var(--header-height, 352px);
+        height: var(--header-height, 264px);
         min-height: 0;
     }
 
@@ -1351,7 +1351,7 @@ body {
 @media (min-width: 769px) {
 
     .hero {
-        height: calc(100svh - 352px);
+        height: calc(100svh - 264px);
         min-height: 0;
         padding-top: 0;
         align-items: flex-start;
@@ -1389,13 +1389,246 @@ body {
 ========================= */
 
 @media (min-width: 769px) {
-
     .site-header .nav-links a {
         font-size: clamp(12px, 1.15vw, 16px);
         font-weight: 500;
         transition: font-size 0.35s ease;
     }
+}
 
+/* Training detail pages */
+.training-detail-intro {
+    display: grid;
+    min-height: 0;
+    height: calc(100svh - 78px);
+    align-items: center;
+    padding-block: clamp(24px, 5vh, 60px);
+    background: var(--warm-white);
+}
+
+.training-detail-photo-wrap {
+    width: 100%;
+    max-width: 500px;
+    min-height: 0;
+    height: min(500px, calc(100svh - 210px));
+}
+
+.training-detail-photo-wrap .about-photo {
+    height: 100%;
+    min-height: 0;
+    object-position: center;
+}
+
+.training-detail-photo-placeholder {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    align-content: center;
+    justify-items: center;
+    gap: 10px;
+    border: 1px solid #d9d0c2;
+    background: var(--cream);
+    color: #8b7a63;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.training-detail-photo-placeholder span:first-child {
+    color: #a28d6e;
+    font-size: 28px;
+}
+
+.training-detail-copy h1 {
+    margin-bottom: 22px;
+    font-size: clamp(38px, 4.4vw, 54px);
+}
+
+.training-detail-cta {
+    margin-top: 12px;
+}
+
+@media (max-width: 640px) {
+    body.training-detail-page {
+        height: 100svh;
+        overflow: hidden;
+    }
+
+    .training-detail-intro {
+        height: calc(100svh - 69px);
+        padding-block: 12px;
+    }
+
+    .training-detail-intro .about-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .training-detail-photo-wrap {
+        width: calc(100% - 12px);
+        height: clamp(130px, 24svh, 200px);
+        margin-inline: auto;
+    }
+
+    .training-detail-photo-wrap .about-photo {
+        height: 100%;
+    }
+
+    .training-detail-photo-wrap .photo-caption {
+        right: -12px;
+        bottom: 10px;
+        min-width: 0;
+        padding: 8px 11px;
+        font-size: 11px;
+    }
+
+    .training-detail-copy .eyebrow {
+        margin-bottom: 8px;
+    }
+
+    .training-detail-copy h1 {
+        margin-bottom: 10px;
+        font-size: clamp(34px, 8.6vw, 43px);
+    }
+
+    .training-detail-copy .lead {
+        margin-bottom: 9px;
+        font-size: 15px;
+        line-height: 1.4;
+    }
+
+    .training-detail-page .training-detail-copy > p:not(.eyebrow, .lead) {
+        margin-bottom: 8px;
+        font-size: 11px;
+        line-height: 1.5;
+    }
+
+    .training-detail-cta {
+        min-height: 42px;
+        margin-top: 4px;
+    }
+
+    .training-detail-page .site-header .navigation {
+        width: calc(100% - 40px);
+    }
+
+    .training-detail-page .navigation > .text-link {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 640px) and (max-height: 600px) {
+    .training-detail-intro {
+        padding-block: 8px;
+    }
+
+    .training-detail-intro .about-grid {
+        gap: 8px;
+    }
+
+    .training-detail-photo-wrap {
+        height: clamp(110px, 20svh, 130px);
+    }
+
+    .training-detail-copy h1 {
+        font-size: clamp(31px, 8vw, 34px);
+    }
+
+    .training-detail-copy .lead {
+        font-size: 14px;
+    }
+
+    .training-detail-page .training-detail-copy > p:not(.eyebrow, .lead) {
+        font-size: 10px;
+        line-height: 1.4;
+    }
+
+    .training-detail-cta {
+        min-height: 38px;
+    }
+}
+
+@media (min-width: 641px) {
+    body.training-detail-page {
+        height: 100svh;
+        overflow: hidden;
+        padding-top: 78px;
+    }
+
+    .training-detail-page .site-header .navigation {
+        width: calc(100% - 64px);
+    }
+
+    .training-detail-intro .about-grid {
+        align-items: center;
+    }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+    body.training-detail-page {
+        padding-top: 79px;
+    }
+
+    .training-detail-intro {
+        height: calc(100svh - 79px);
+        padding-block: 14px;
+    }
+
+    .training-detail-intro .about-grid {
+        gap: 24px;
+    }
+
+    .training-detail-photo-wrap {
+        height: min(320px, calc(100svh - 300px));
+    }
+
+    .training-detail-page .training-detail-copy h1 {
+        margin-bottom: 12px;
+        font-size: clamp(34px, 5.5vw, 44px);
+    }
+
+    .training-detail-page .training-detail-copy .lead {
+        margin-bottom: 10px;
+        font-size: 15px;
+        line-height: 1.45;
+    }
+
+    .training-detail-page .training-detail-copy > p:not(.eyebrow, .lead) {
+        margin-bottom: 8px;
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .training-detail-page .site-header .navigation {
+        width: calc(100% - 40px);
+    }
+}
+
+@media (max-height: 700px) and (min-width: 769px) {
+    .training-detail-intro {
+        padding-block: 18px;
+    }
+
+    .training-detail-photo-wrap {
+        height: min(390px, calc(100svh - 180px));
+    }
+
+    .training-detail-page .training-detail-copy h1 {
+        margin-bottom: 13px;
+        font-size: 42px;
+    }
+
+    .training-detail-page .training-detail-copy .lead {
+        margin-bottom: 10px;
+        font-size: 17px;
+        line-height: 1.45;
+    }
+
+    .training-detail-page .training-detail-copy > p:not(.eyebrow, .lead) {
+        margin-bottom: 8px;
+        font-size: 12px;
+        line-height: 1.5;
+    }
 }
 
 
@@ -1465,5 +1698,33 @@ body {
 
     .training-card:nth-child(5) {
         grid-column: 4 / span 2;
+    }
+}
+
+/* Compacte header op trainingspagina's */
+@media (min-width: 769px) {
+    body.training-detail-page {
+        padding-top: 78px;
+    }
+}
+
+/* HEADER VERKLEINT GELIJKMATIG BIJ SCROLLEN */
+
+@media (min-width: 769px) {
+    .site-header {
+        height: var(--header-height, 264px);
+        min-height: 0;
+    }
+
+    .site-header .navigation {
+        height: 100%;
+        min-height: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        align-items: center;
+    }
+
+    .site-header .nav-links {
+        align-items: center;
     }
 }
