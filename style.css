@@ -477,6 +477,7 @@ h2 em {
 }
 
 .training-card {
+  position: relative;
   display: flex;
   min-height: 285px;
   flex-direction: column;
@@ -525,6 +526,17 @@ h2 em {
 
 .training-card .text-link {
   margin-top: auto;
+}
+
+.training-card .text-link::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+}
+
+.training-card .text-link:focus-visible::after {
+  outline: 2px solid var(--brown);
+  outline-offset: 3px;
 }
 
 /* Pricing details */
@@ -1706,6 +1718,177 @@ body {
     body.training-detail-page {
         padding-top: 78px;
     }
+}
+
+/* Ineke's story page */
+.story-page {
+    padding-top: 0;
+    background: var(--cream);
+}
+
+.story-page main {
+    background: var(--cream);
+}
+
+.story-page .site-header .navigation {
+    min-height: 78px;
+}
+
+.story-page .site-header {
+    position: sticky;
+    top: 0;
+    height: 78px;
+    min-height: 0;
+    background: var(--warm-white);
+}
+
+.story-page .site-header .brand .brand-symbol {
+    width: 58px;
+    height: 58px;
+}
+
+.story-page .site-header .brand .brand-wordmark {
+    width: 165px;
+}
+
+.story-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.story-actions .button {
+    gap: 10px;
+    padding-inline: 14px;
+    white-space: nowrap;
+}
+
+.story-actions .story-back-button {
+    background: var(--cream);
+}
+
+.story-actions .story-back-button:hover {
+    background: var(--sand);
+}
+
+.story-intro {
+    padding-block: clamp(64px, 9vw, 112px) 56px;
+}
+
+.story-content,
+.story-article {
+    width: min(820px, calc(100% - 64px));
+    margin-inline: auto;
+}
+
+.story-intro h1 {
+    margin-bottom: 24px;
+    font-size: clamp(42px, 6vw, 64px);
+}
+
+.story-lead {
+    max-width: 740px;
+    margin-bottom: 0;
+    color: var(--brown);
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.story-article {
+    padding-block: 64px 96px;
+}
+
+.story-article section {
+    margin-bottom: 48px;
+}
+
+.story-article h2 {
+    margin-bottom: 16px;
+    font-size: clamp(26px, 3.5vw, 34px);
+}
+
+.story-article p {
+    margin-bottom: 16px;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.story-article p:last-child {
+    margin-bottom: 0;
+}
+
+.story-back-link {
+    display: inline-flex;
+    margin-top: 8px;
+}
+
+@media (min-width: 769px) {
+    .story-page .site-header {
+        height: 78px;
+        min-height: 0;
+    }
+
+    .story-page .site-header .navigation {
+        height: 100%;
+        min-height: 0;
+    }
+}
+
+@media (max-width: 640px) {
+    .story-content,
+    .story-article {
+        width: calc(100% - 40px);
+    }
+
+    .story-page .site-header {
+        height: auto;
+    }
+
+    .story-page .site-header .navigation {
+        width: calc(100% - 40px);
+        min-height: 0;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding-block: 8px;
+    }
+
+    .story-actions {
+        width: 100%;
+        justify-content: flex-end;
+        gap: 8px;
+    }
+
+    .story-actions .button {
+        min-height: 38px;
+        gap: 6px;
+        padding-inline: 10px;
+        font-size: 10px;
+    }
+
+    .story-intro {
+        padding-block: 56px 40px;
+    }
+
+    .story-intro h1 {
+        font-size: clamp(38px, 11vw, 48px);
+    }
+
+    .story-lead {
+        font-size: 16px;
+    }
+
+    .story-article {
+        padding-block: 44px 64px;
+    }
+
+    .story-article section {
+        margin-bottom: 36px;
+    }
+
+    .story-article p {
+        font-size: 15px;
+    }
+
 }
 
 /* HEADER VERKLEINT GELIJKMATIG BIJ SCROLLEN */
