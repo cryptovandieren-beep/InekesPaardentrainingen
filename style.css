@@ -1911,3 +1911,283 @@ body {
         align-items: center;
     }
 }
+
+/* The behavior-training copy can exceed a single viewport. */
+body.training-detail-page.behavior-detail-page {
+    height: auto;
+    min-height: 100svh;
+    overflow-y: auto;
+}
+
+.behavior-detail-page .behavior-intro-copy {
+    margin-bottom: 15px;
+    color: #6e6b64;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.behavior-detail-page .behavior-intro-copy strong {
+    font-weight: 700;
+}
+
+.behavior-detail-page .training-detail-intro {
+    height: auto;
+    min-height: calc(100svh - 78px);
+}
+
+.behavior-detail-page .training-detail-copy h1 {
+    font-size: clamp(34px, 3.8vw, 46px);
+}
+
+.behavior-detail-page .training-detail-copy h1 strong {
+    font-weight: 600;
+}
+
+.behavior-detail-page .training-detail-copy > p:not(.eyebrow, .lead) {
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+    .behavior-detail-page .training-detail-intro {
+        min-height: calc(100svh - 79px);
+    }
+}
+
+@media (max-width: 640px) {
+    .behavior-detail-page .training-detail-intro {
+        min-height: calc(100svh - 69px);
+    }
+
+    .behavior-detail-page .behavior-intro-copy {
+        font-size: 14px;
+        line-height: 1.65;
+    }
+
+    .behavior-detail-page .training-detail-copy h1 {
+        font-size: clamp(30px, 8vw, 38px);
+    }
+
+    .behavior-detail-page .training-detail-copy > p:not(.eyebrow, .lead) {
+        font-size: 14px;
+        line-height: 1.65;
+    }
+}
+
+body.training-detail-page.trailer-detail-page {
+    height: auto;
+    min-height: 100svh;
+    overflow-y: auto;
+}
+
+.trailer-detail-page .training-detail-intro {
+    height: auto;
+    min-height: calc(100svh - 78px);
+}
+
+.trailer-detail-page .training-detail-copy h1 {
+    font-size: clamp(34px, 3.8vw, 46px);
+}
+
+.trailer-detail-page .training-detail-copy > p:not(.eyebrow, .lead) {
+    color: #6e6b64;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+    .trailer-detail-page .training-detail-intro {
+        min-height: calc(100svh - 79px);
+    }
+}
+
+@media (max-width: 640px) {
+    .trailer-detail-page .training-detail-intro {
+        min-height: calc(100svh - 69px);
+    }
+
+    .trailer-detail-page .training-detail-copy h1 {
+        font-size: clamp(30px, 8vw, 38px);
+    }
+
+    .trailer-detail-page .training-detail-copy > p:not(.eyebrow, .lead) {
+        font-size: 14px;
+        line-height: 1.65;
+    }
+}
+
+body.training-detail-page.groundwork-detail-page {
+    height: auto;
+    min-height: 100svh;
+    overflow-y: auto;
+}
+
+.groundwork-detail-page .training-detail-intro {
+    height: auto;
+    min-height: calc(100svh - 78px);
+}
+
+.groundwork-detail-page .training-detail-copy h1 {
+    font-size: clamp(34px, 3.8vw, 46px);
+}
+
+.groundwork-detail-page .training-detail-copy > p:not(.eyebrow, .lead) {
+    color: #6e6b64;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+    .groundwork-detail-page .training-detail-intro {
+        min-height: calc(100svh - 79px);
+    }
+}
+
+@media (max-width: 640px) {
+    .groundwork-detail-page .training-detail-intro {
+        min-height: calc(100svh - 69px);
+    }
+
+    .groundwork-detail-page .training-detail-copy h1 {
+        font-size: clamp(30px, 8vw, 38px);
+    }
+
+    .groundwork-detail-page .training-detail-copy > p:not(.eyebrow, .lead) {
+        font-size: 14px;
+        line-height: 1.65;
+    }
+}
+
+.groundwork-detail-page .training-detail-photo-wrap {
+    display: flex;
+    height: auto;
+    flex-direction: column;
+    background: transparent;
+}
+
+.groundwork-detail-page .training-detail-photo-wrap .about-photo {
+    height: min(500px, calc(100svh - 210px));
+    flex: 0 0 auto;
+}
+
+.groundwork-detail-page .photo-credit {
+    align-self: flex-end;
+    margin-top: 4px;
+    color: var(--muted);
+    font-size: 10px;
+    line-height: 1.4;
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+    .groundwork-detail-page .training-detail-photo-wrap .about-photo {
+        height: min(320px, calc(100svh - 300px));
+    }
+}
+
+@media (max-width: 640px) {
+    .groundwork-detail-page .training-detail-photo-wrap .about-photo {
+        height: clamp(130px, 24svh, 200px);
+    }
+}
+
+@media (max-width: 640px) and (max-height: 600px) {
+    .groundwork-detail-page .training-detail-photo-wrap .about-photo {
+        height: clamp(110px, 20svh, 130px);
+    }
+}
+
+body.training-detail-page.young-horses-detail-page {
+    height: auto;
+    min-height: 100svh;
+    overflow-y: auto;
+}
+
+.young-horses-detail-page .training-detail-intro {
+    height: auto;
+    min-height: calc(100svh - 78px);
+}
+
+.young-horses-detail-page .training-detail-copy h1 {
+    font-size: clamp(34px, 3.8vw, 46px);
+}
+
+.young-horses-detail-page .training-detail-copy > p:not(.eyebrow, .lead) {
+    color: #6e6b64;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.training-detail-page.young-horses-detail-page .training-detail-copy > p:not(.eyebrow, .lead).young-horses-note {
+    margin-top: 1.5em;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+    .young-horses-detail-page .training-detail-intro {
+        min-height: calc(100svh - 79px);
+    }
+}
+
+@media (max-width: 640px) {
+    .young-horses-detail-page .training-detail-intro {
+        min-height: calc(100svh - 69px);
+    }
+
+    .young-horses-detail-page .training-detail-copy h1 {
+        font-size: clamp(30px, 8vw, 38px);
+    }
+
+    .young-horses-detail-page .training-detail-copy > p:not(.eyebrow, .lead) {
+        font-size: 14px;
+        line-height: 1.65;
+    }
+
+    .training-detail-page.young-horses-detail-page .training-detail-copy > p:not(.eyebrow, .lead).young-horses-note {
+        font-size: 12px;
+        line-height: 1.55;
+    }
+}
+
+body.training-detail-page.obstacle-detail-page {
+    height: auto;
+    min-height: 100svh;
+    overflow-y: auto;
+}
+
+.obstacle-detail-page .training-detail-intro {
+    height: auto;
+    min-height: calc(100svh - 78px);
+}
+
+.obstacle-detail-page .training-detail-copy h1 {
+    font-size: clamp(34px, 3.8vw, 46px);
+}
+
+.obstacle-detail-page .training-detail-copy > p.obstacle-detail-copy {
+    color: #6e6b64;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+    .obstacle-detail-page .training-detail-intro {
+        min-height: calc(100svh - 79px);
+    }
+}
+
+@media (max-width: 640px) {
+    .obstacle-detail-page .training-detail-intro {
+        min-height: calc(100svh - 69px);
+    }
+
+    .obstacle-detail-page .training-detail-copy h1 {
+        font-size: clamp(30px, 8vw, 38px);
+    }
+
+    .obstacle-detail-page .training-detail-copy > p.obstacle-detail-copy {
+        font-size: 14px;
+        line-height: 1.65;
+    }
+}
