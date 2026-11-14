@@ -74,27 +74,27 @@ if (document.body.classList.contains("training-detail-page")) {
 
         // De header krimpt 1px per gescrollde pixel tot 78px hoog.
         const headerScrollDistance = Math.min(
-            Math.max(window.scrollY, 0), 186
+            Math.max(window.scrollY, 0), 132
         );
 
-        const progress = headerScrollDistance / 186;
+        const progress = headerScrollDistance / 132;
 
         // Hele witte header verkleinen
         header.style.setProperty(
             "--header-height",
-            `${264 - headerScrollDistance}px`
+            `${210 - headerScrollDistance}px`
         );
 
         // Paard + Ineke verkleinen
         header.style.setProperty(
             "--symbol-size",
-            `${175 - 117 * progress}px`
+            `${145 - 87 * progress}px`
         );
 
         // Tekstlogo verkleinen
         header.style.setProperty(
             "--wordmark-width",
-            `${480 - 315 * progress}px`
+            `${420 - 255 * progress}px`
         );
     }
 
