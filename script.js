@@ -103,3 +103,39 @@ if (document.body.classList.contains("training-detail-page")) {
 
     updateHeader();
 }
+
+/* Customer experience slider */
+const experienceTrack = document.querySelector(".experience-track");
+const experienceCards = Array.from(document.querySelectorAll(".experience-card"));
+const experiencePrev = document.querySelector(".experience-prev");
+const experienceNext = document.querySelector(".experience-next");
+
+if (experienceTrack && experienceCards.length && experiencePrev && experienceNext) {
+    let experienceIndex = 0;
+
+    const goToExperience = (index) => {
+        experienceIndex = (index + experienceCards.length) % experienceCards.length;
+        experienceTrack.scrollTo({
+            left: experienceCards[experienceIndex].offsetLeft - experienceCards[0].offsetLeft,
+            behavior: "smooth"
+        });
+    };
+
+    experiencePrev.addEventListener("click", () => {
+        goToExperience(experienceIndex - 1);
+    });
+
+    experienceNext.addEventListener("click", () => {
+        goToExperience(experienceIndex + 1);
+    });
+
+    experienceTrack.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowLeft") {
+            event.preventDefault();
+            goToExperience(experienceIndex - 1);
+        } else if (event.key === "ArrowRight") {
+            event.preventDefault();
+            goToExperience(experienceIndex + 1);
+        }
+    });
+}

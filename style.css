@@ -154,7 +154,7 @@ h2 em {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: clamp(19px, 3vw, 39px);
+  gap: clamp(14px, 2.2vw, 28px);
 }
 
 .nav-links a {
@@ -680,6 +680,167 @@ h2 em {
   color: #77736b;
   font-size: 12px;
   line-height: 1.8;
+}
+
+/* Customer experiences slider */
+.experiences {
+  overflow: hidden;
+  background: var(--warm-white);
+}
+
+.experiences-heading {
+  max-width: 760px;
+  margin: 0 auto 53px;
+  text-align: center;
+}
+
+.experiences-heading .eyebrow {
+  justify-content: center;
+}
+
+.experiences-heading h2 {
+  margin-bottom: 17px;
+  font-size: clamp(38px, 4.4vw, 54px);
+  white-space: nowrap;
+}
+
+.experiences-heading > p:last-child {
+  max-width: 420px;
+  margin: 0 auto;
+  color: #77736b;
+  font-size: 13px;
+}
+
+.experience-slider {
+  position: relative;
+}
+
+.experience-track {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  padding: 2px 1px 18px;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.experience-track::-webkit-scrollbar {
+  display: none;
+}
+
+.experience-card {
+  position: relative;
+  display: flex;
+  min-height: 280px;
+  flex: 0 0 66%;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 34px 38px 28px;
+  border: 1px solid #e5ded2;
+  border-radius: 18px;
+  background: var(--cream);
+  scroll-snap-align: start;
+}
+
+.experience-quote {
+  position: absolute;
+  top: 8px;
+  right: 25px;
+  color: #d6cbb9;
+  font-family: var(--serif);
+  font-size: 62px;
+  line-height: 1;
+}
+
+.experience-card > p {
+  max-width: 92%;
+  margin: 25px 0 24px;
+  color: #77736b;
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.experience-card h3 {
+  margin: 0;
+  color: var(--brown);
+  font-family: var(--serif);
+  font-size: 21px;
+}
+
+.experience-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.experience-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 18px;
+}
+
+.experience-button {
+  width: 48px;
+  height: 48px;
+  border: 1px solid #d9d0c2;
+  border-radius: 50%;
+  background: var(--cream);
+  color: var(--brown);
+  cursor: pointer;
+  font-family: var(--sans);
+  font-size: 20px;
+  transition: background 180ms ease, color 180ms ease, border-color 180ms ease;
+}
+
+.experience-button:hover {
+  border-color: var(--brown);
+  background: var(--brown);
+  color: white;
+}
+
+.experience-button:focus-visible,
+.experience-track:focus-visible {
+  outline: 2px solid var(--brown);
+  outline-offset: 3px;
+}
+
+@media (max-width: 800px) {
+  .experience-card {
+    flex-basis: 78%;
+  }
+}
+
+@media (max-width: 640px) {
+  .experiences-heading {
+    margin-bottom: 38px;
+  }
+
+  .experiences-heading h2 {
+    font-size: clamp(39px, 10vw, 49px);
+    white-space: normal;
+  }
+
+  .experience-track {
+    gap: 14px;
+  }
+
+  .experience-card {
+    min-height: 300px;
+    flex-basis: 84%;
+    padding: 28px 24px 24px;
+  }
+
+  .experience-card > p {
+    max-width: 100%;
+    font-size: 14px;
+  }
+
+  .experience-footer {
+    align-items: flex-start;
+  }
 }
 
 /* Contact call to action */
@@ -1430,7 +1591,7 @@ body {
 
 @media (min-width: 769px) {
     .site-header .nav-links a {
-        font-size: clamp(12px, 1.15vw, 16px);
+        font-size: clamp(11px, 1vw, 14px);
         font-weight: 500;
         transition: font-size 0.35s ease;
     }
