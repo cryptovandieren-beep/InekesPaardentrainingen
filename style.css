@@ -423,6 +423,12 @@ h2 em {
   transform: translateX(4px);
 }
 
+.training-detail-actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
 .about-copy > .text-link {
   margin-top: 9px;
 }
@@ -598,6 +604,12 @@ h2 em {
 .price-divider {
   height: 1px;
   background: #e3dbce;
+}
+
+.price-short {
+  margin: -10px 0 18px;
+  color: #8b7a63;
+  font-size: 11px;
 }
 
 .price-points {
@@ -1746,6 +1758,15 @@ body {
 
     .training-detail-page .site-header .navigation {
         width: calc(100% - 40px);
+    }
+
+    .training-detail-actions {
+        gap: 8px;
+    }
+
+    .training-detail-actions .text-link {
+        gap: 5px;
+        font-size: 9px;
     }
 
     .training-detail-page .navigation > .text-link {
