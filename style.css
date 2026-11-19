@@ -715,15 +715,42 @@ h2 em {
   position: relative;
 }
 
+.experience-slider::after {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 66px;
+  width: 64px;
+  background: linear-gradient(to right, transparent, var(--warm-white));
+  content: "";
+  transition: opacity 180ms ease;
+  pointer-events: none;
+}
+
 .experience-track {
   display: flex;
   gap: 24px;
   overflow-x: auto;
   padding: 2px 1px 18px;
   scroll-behavior: smooth;
+  scroll-padding-left: 1px;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
+}
+
+.experience-track::after {
+  flex: 0 0 34%;
+  content: "";
+}
+
+.experience-slider.is-last-experience .experience-track::after {
+  flex-basis: 0;
+}
+
+.experience-slider.is-last-experience::after {
+  opacity: 0;
 }
 
 .experience-track::-webkit-scrollbar {
@@ -785,10 +812,10 @@ h2 em {
 .experience-button {
   width: 48px;
   height: 48px;
-  border: 1px solid #d9d0c2;
+  border: 1px solid var(--brown);
   border-radius: 50%;
-  background: var(--cream);
-  color: var(--brown);
+  background: var(--brown);
+  color: white;
   cursor: pointer;
   font-family: var(--sans);
   font-size: 20px;
@@ -796,9 +823,9 @@ h2 em {
 }
 
 .experience-button:hover {
-  border-color: var(--brown);
-  background: var(--brown);
-  color: white;
+  border-color: #d9d0c2;
+  background: var(--cream);
+  color: var(--brown);
 }
 
 .experience-button:focus-visible,
@@ -808,6 +835,10 @@ h2 em {
 }
 
 @media (max-width: 800px) {
+  .experience-track::after {
+    flex-basis: 22%;
+  }
+
   .experience-card {
     flex-basis: 78%;
   }
@@ -825,6 +856,10 @@ h2 em {
 
   .experience-track {
     gap: 14px;
+  }
+
+  .experience-track::after {
+    flex-basis: 16%;
   }
 
   .experience-card {

@@ -115,8 +115,19 @@ if (experienceTrack && experienceCards.length && experiencePrev && experienceNex
 
     const goToExperience = (index) => {
         experienceIndex = (index + experienceCards.length) % experienceCards.length;
+        const isLastExperience = experienceIndex === experienceCards.length - 1;
+        const experienceSlider = experienceTrack.parentElement;
+        experienceSlider.classList.toggle("is-last-experience", isLastExperience);
+        const selectedCard = experienceCards[experienceIndex];
+
         experienceTrack.scrollTo({
-            left: experienceCards[experienceIndex].offsetLeft - experienceCards[0].offsetLeft,
+            left: isLastExperience
+                ? experienceTrack.scrollLeft
+                    + selectedCard.getBoundingClientRect().right
+                    - experienceTrack.getBoundingClientRect().right
+                : experienceTrack.scrollLeft
+                    + selectedCard.getBoundingClientRect().left
+                    - experienceTrack.getBoundingClientRect().left,
             behavior: "smooth"
         });
     };
